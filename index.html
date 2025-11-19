@@ -139,6 +139,11 @@
             padding: 10px;
             border-radius: 4px;
         }
+        .action-buttons {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
         button {
             background-color: #3498db;
             color: white;
@@ -147,7 +152,7 @@
             border-radius: 4px;
             cursor: pointer;
             font-size: 12px;
-            margin: 10px 5px 10px 0;
+            margin: 10px 5px;
         }
         button:hover {
             background-color: #2980b9;
@@ -156,7 +161,7 @@
             body {
                 background-color: white;
             }
-            button {
+            .action-buttons button {
                 display: none;
             }
             .container {
@@ -177,11 +182,6 @@
 </head>
 <body>
     <div class="container">
-        <div style="text-align: center; margin-bottom: 20px;">
-            <button onclick="window.print()">🖨️ Imprimir / Guardar como PDF</button>
-            <button onclick="limpiarFormulario()">🔄 Limpiar Formulario</button>
-        </div>
-
         <h1>INSTRUMENTO DE OBSERVACIÓN INDIVIDUAL PARA DOCENTES</h1>
         <h1 style="font-size: 16px; text-transform: none; margin-bottom: 20px;">Detección de Conductas de Acoso, Hostigamiento y Bullying</h1>
 
@@ -563,6 +563,12 @@
             <p style="margin-bottom: 30px;">Fecha: <span class="firma-line"></span></p>
             <p style="margin-bottom: 30px;">RUT: <span class="firma-line"></span></p>
         </div>
+
+        <!-- Action buttons moved to the bottom -->
+        <div class="action-buttons">
+            <button onclick="window.print()">🖨️ Imprimir / Guardar como PDF</button>
+            <button onclick="limpiarFormulario()">🔄 Limpiar Formulario</button>
+        </div>
     </div>
 
     <script>
@@ -639,3 +645,4 @@
     </script>
 </body>
 </html>
+
