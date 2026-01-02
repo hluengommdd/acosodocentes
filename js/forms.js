@@ -56,16 +56,27 @@ function calcularTotal() {
 }
 
 function guardarDatos() {
+    const getCheckedValues = (name) => Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map(i=>i.value);
     const data = {
-        establecimiento: document.getElementById('establecimiento').value,
-        estudiante: document.getElementById('estudiante').value,
-        curso: document.getElementById('curso').value,
-        fecha: document.getElementById('fecha').value,
-        descripcion: document.getElementById('narrativo').value || "Sin descripción narrativa."
+        establecimiento: document.getElementById('establecimiento').value || '',
+        estudiante: document.getElementById('estudiante').value || '',
+        curso: document.getElementById('curso').value || '',
+        fecha: document.getElementById('fecha').value || '',
+        narrativo: (document.getElementById('narrativo') && document.getElementById('narrativo').value) || "",
+        total: document.getElementById('total')?document.getElementById('total').textContent: '0',
+        interpretacion: document.getElementById('resultado-texto')?document.getElementById('resultado-texto').textContent:'',
+        contextos: getCheckedValues('contexto'),
+        impactos: getCheckedValues('impacto')
     };
 
-    localStorage.setItem('informeCaso', JSON.stringify(data));
-    alert('Datos guardados ✔️');
+    // Save to sessionStorage so print view can read it immediately after opening
+    try{
+        sessionStorage.setItem('printData', JSON.stringify(data));
+    }catch(e){
+        // fallback to localStorage if sessionStorage is unavailable
+        localStorage.setItem('printData', JSON.stringify(data));
+    }
+    alert('Datos preparados para impresión ✔️');
 }
 
 function abrirInforme() {
