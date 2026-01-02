@@ -1,0 +1,14 @@
+:root{
+  --print-bg: #ffffff;
+  --print-fg: #111827;
+  --muted: #6b7280;
+  --accent: #0f172a;
+  --brand: #111111;
+  --page-width: 210mm;
+  --gutter: 16px;
+  --font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+@media print{
+  :root{--gutter:8px}
+}
