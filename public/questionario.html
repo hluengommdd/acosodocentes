@@ -574,41 +574,31 @@
     <script>
         function calcularTotal() {
             let total = 0;
-            
-            // Sumas Secciones A y B
-            for (let i = 1; i <= 12; i++) {
-                let radios = document.getElementsByName('c' + i);
-                radios.forEach(radio => {
-                    if (radio.checked) {
-                        total += parseInt(radio.value);
+
+            // Sumar respuestas por ítem c1..c24 (si existen)
+            for (let i = 1; i <= 24; i++) {
+                const group = document.getElementsByName('c' + i);
+                if (!group || group.length === 0) continue;
+                for (let j = 0; j < group.length; j++) {
+                    const el = group[j];
+                    if ((el.type === 'radio' || el.type === 'checkbox') && el.checked) {
+                        const v = parseInt(el.value, 10);
+                        if (!isNaN(v)) total += v;
                     }
-                });
+                }
             }
-            
-            // Suma Secciones C, D, F
-            for (let i = 13; i <= 24; i++) {
-                let radios = document.getElementsByName('c' + i);
-                radios.forEach(radio => {
-                    if (radio.checked) {
-                        total += parseInt(radio.value);
-                    }
-                });
-            }
-            
-            // Suma contextos
-            let contextos = document.querySelectorAll('input[name="contexto"]:checked');
+
+            // contextos (checkboxes) y impactos (checkboxes)
+            const contextos = document.querySelectorAll('input[name="contexto"]:checked');
             total += contextos.length;
-            
-            // Suma impactos
-            let impactos = document.querySelectorAll('input[name="impacto"]:checked');
+            const impactos = document.querySelectorAll('input[name="impacto"]:checked');
             total += impactos.length;
-            
+
             document.getElementById('total').textContent = total;
-            
-            // Mostrar interpretación
-            let interpDiv = document.getElementById('interpretacion');
-            let resultadoTexto = document.getElementById('resultado-texto');
-            
+
+            // Interpretación
+            const interpDiv = document.getElementById('interpretacion');
+            const resultadoTexto = document.getElementById('resultado-texto');
             if (total <= 10) {
                 resultadoTexto.textContent = '✓ SIN INDICADORES SIGNIFICATIVOS (0-10 puntos) - Continuar monitoreo regular.';
                 interpDiv.style.background = '#d5f4e6';
@@ -628,19 +618,19 @@
             }
             interpDiv.style.display = 'block';
         }
-        
+
         function limpiarFormulario() {
-            if (confirm('¿Desea limpiar todo el formulario?')) {
-                document.querySelectorAll('input, textarea').forEach(elem => {
-                    if (elem.type === 'radio' || elem.type === 'checkbox') {
-                        elem.checked = false;
-                    } else {
-                        elem.value = '';
-                    }
-                });
-                document.getElementById('total').textContent = '0';
-                document.getElementById('interpretacion').style.display = 'none';
+            if (!confirm('¿Desea limpiar todo el formulario?')) return;
+            const inputs = document.querySelectorAll('input, textarea');
+            for (let i = 0; i < inputs.length; i++) {
+                const el = inputs[i];
+                if (el.type === 'radio' || el.type === 'checkbox') el.checked = false;
+                else el.value = '';
             }
+            const totalEl = document.getElementById('total');
+            if (totalEl) totalEl.textContent = '0';
+            const interpDiv = document.getElementById('interpretacion');
+            if (interpDiv) interpDiv.style.display = 'none';
         }
     </script>
 </body>
