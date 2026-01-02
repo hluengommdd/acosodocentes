@@ -100,6 +100,40 @@
     await setupControls();
   }
 
+  // Try to read `data` from URL param: ?data=<uriEncodedJSON> or ?data=<base64>
+  function parseDataFromUrl(){
+    try{
+      const params = new URLSearchParams(window.location.search);
+      const raw = params.get('data');
+      if(!raw) return null;
+      // first try URI-decoded JSON
+      try{ return JSON.parse(decodeURIComponent(raw)); }catch(e){}
+      // then try base64
+      try{ return JSON.parse(atob(raw)); }catch(e){}
+      return null;
+    }catch(e){ return null; }
+  }
+
+  // Listen for postMessage from other window/platform: { type: 'render-print', payload: {...} }
+  window.addEventListener('message', (ev)=>{
+    try{
+      const msg = ev.data;
+      if(msg && msg.type === 'render-print' && msg.payload){
+        renderPrint(msg.payload);
+      }
+    }catch(e){}
+  }, false);
+
+  // Auto-run: prefer URL param, then stored data
+  (function autoRun(){
+    const urlData = parseDataFromUrl();
+    if(urlData){
+      setTimeout(()=>renderPrint(urlData), 20);
+      return;
+    }
+    // otherwise normal stored behavior already wired below
+  })();
+
   // expose
   window.renderPrint = renderPrint;
   // auto-call if used as standalone

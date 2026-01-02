@@ -17,11 +17,27 @@
       <p>Cargando plantilla...</p>
     </div>
 
-    <!--
-      Uso: colocar en sessionStorage/localStorage la clave `printData` con el objeto
-      o llamar `renderPrint(myData)` desde la consola o un script que cargue esta plantilla.
-      Esto permite a otra plataforma reutilizar estilos/estructura y solo cambiar `data`.
-    -->
+     <!--
+      Formas de pasar datos a esta plantilla:
+
+      1) sessionStorage/localStorage
+        sessionStorage.setItem('printData', JSON.stringify(myData));
+        Abrir: /print-styles/print-template.html
+
+      2) Llamar a la función `renderPrint` (desde la consola o script que abra esta plantilla):
+        window.renderPrint(myData)
+
+      3) Parámetro en la URL (ideal para integrar en otra plataforma que abra una nueva ventana):
+        /print-styles/print-template.html?data=<URI-ENCODED-JSON>
+        o Base64: /print-styles/print-template.html?data=<BASE64(JSON)>
+
+      4) postMessage desde la ventana que abra la plantilla:
+        const w = window.open('/print-styles/print-template.html');
+        w.postMessage({type:'render-print', payload: myData}, '*');
+
+      La plantilla intentará leer `?data=` primero, luego `sessionStorage/localStorage`,
+      y también escucha mensajes `postMessage` para renderizar inmediatamente.
+     -->
 
     <script src="/print-styles/js/html2pdf.bundle.min.js"></script>
     <script src="/print-styles/js/print-renderer.js"></script>
