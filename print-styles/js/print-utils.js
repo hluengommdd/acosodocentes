@@ -13,12 +13,15 @@
 
   const logo = '/assets/logo-oficial.png'
 
+  const contextosStr = Array.isArray(data.contextos) && data.contextos.length ? data.contextos.join(', ') : 'No especificado';
+  const impactosStr = Array.isArray(data.impactos) && data.impactos.length ? data.impactos.join(', ') : 'No especificado';
+
   const html = `
     <header class="print-header">
       <div>
         <div class="print-page-title">CUESTIONARIO - INSTRUMENTO DE OBSERVACIÓN</div>
         <div class="print-page-subtitle">${valorDefault(data.establecimiento,'')}</div>
-        <div class="print-page-date">Fecha: ${fechaEmision} ${horaEmision}</div>
+        <div class="print-page-date">Fecha emisión: ${fechaEmision} ${horaEmision}</div>
       </div>
       <div class="header-right"><img src="${logo}" class="print-header__logo" alt="logo"/></div>
     </header>
@@ -26,12 +29,18 @@
       <div class="info-section">
         <h3>Información general</h3>
         <div class="info-grid">
-          <div><strong>Curso:</strong> ${valorDefault(data.curso)}</div>
+          <div><strong>Establecimiento:</strong> ${valorDefault(data.establecimiento)}</div>
+          <div><strong>Docente observador:</strong> ${valorDefault(data.docente)}</div>
+          <div><strong>Asignatura:</strong> ${valorDefault(data.asignatura)}</div>
           <div><strong>Estudiante:</strong> ${valorDefault(data.estudiante)}</div>
+          <div><strong>Curso:</strong> ${valorDefault(data.curso)}</div>
           <div><strong>Edad:</strong> ${valorDefault(data.edad)}</div>
+          <div><strong>Sexo:</strong> ${valorDefault(data.sexo)}</div>
+          <div><strong>Período observado:</strong> ${valorDefault(data.fecha_desde,'')}${data.fecha_desde && data.fecha_hasta? ' - ' + data.fecha_hasta : ''}</div>
           <div><strong>Total:</strong> ${valorDefault(data.total)}</div>
           <div><strong>Interpretación:</strong> ${valorDefault(data.interpretacion)}</div>
-          <div><strong>Contextos:</strong> ${Array.isArray(data.contextos)?data.contextos.join(', '):''}</div>
+          <div><strong>Contextos:</strong> ${contextosStr}</div>
+          <div><strong>Impactos observados:</strong> ${impactosStr}</div>
         </div>
       </div>
       <div class="section">

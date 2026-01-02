@@ -56,12 +56,30 @@ function calcularTotal() {
 }
 
 function guardarDatos() {
-    const getCheckedValues = (name) => Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map(i=>i.value);
+    const getCheckedValues = (name) => {
+        return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map(input => {
+            // prefer label text if available
+            if (input.id) {
+                const lbl = document.querySelector(`label[for="${input.id}"]`);
+                if (lbl && lbl.textContent) return lbl.textContent.trim();
+            }
+            if (input.value && input.value !== 'on') return input.value;
+            return input.id || '';
+        }).filter(Boolean);
+    };
+
+    const sexoElem = document.querySelector('input[name="sexo"]:checked');
     const data = {
-        establecimiento: document.getElementById('establecimiento').value || '',
-        estudiante: document.getElementById('estudiante').value || '',
-        curso: document.getElementById('curso').value || '',
-        fecha: document.getElementById('fecha').value || '',
+        establecimiento: document.getElementById('establecimiento')?document.getElementById('establecimiento').value:'',
+        estudiante: document.getElementById('estudiante')?document.getElementById('estudiante').value:'',
+        curso: document.getElementById('curso')?document.getElementById('curso').value:'',
+        fecha: document.getElementById('fecha')?document.getElementById('fecha').value:'',
+        docente: document.getElementById('docente')?document.getElementById('docente').value:'',
+        asignatura: document.getElementById('asignatura')?document.getElementById('asignatura').value:'',
+        sexo: sexoElem?sexoElem.value:'',
+        edad: document.getElementById('edad')?document.getElementById('edad').value:'',
+        fecha_desde: document.getElementById('fecha_desde')?document.getElementById('fecha_desde').value:'',
+        fecha_hasta: document.getElementById('fecha_hasta')?document.getElementById('fecha_hasta').value:'',
         narrativo: (document.getElementById('narrativo') && document.getElementById('narrativo').value) || "",
         total: document.getElementById('total')?document.getElementById('total').textContent: '0',
         interpretacion: document.getElementById('resultado-texto')?document.getElementById('resultado-texto').textContent:'',
@@ -76,7 +94,6 @@ function guardarDatos() {
         // fallback to localStorage if sessionStorage is unavailable
         localStorage.setItem('printData', JSON.stringify(data));
     }
-    alert('Datos preparados para impresión ✔️');
 }
 
 function abrirInforme() {
