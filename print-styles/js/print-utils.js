@@ -60,6 +60,14 @@
         <h3>Registro narrativo</h3>
         <div class="text-response">${valorDefault(data.narrativo,'')}</div>
       </div>
+      <div class="section">
+        <h3>Firma y compromiso</h3>
+        <div class="firma-block">
+          <div class="firma-field"><strong>Firma:</strong><div class="firma-line">${valorDefault(data.firma_nombre,'')}</div></div>
+          <div class="firma-field"><strong>Fecha:</strong><div class="firma-line">${valorDefault(data.firma_fecha,'')}</div></div>
+          <div class="firma-field"><strong>RUT:</strong><div class="firma-line">${valorDefault(data.firma_rut,'')}</div></div>
+        </div>
+      </div>
     </div>
     <footer class="print-footer">Documento para uso institucional. Generado automáticamente.</footer>`
 
