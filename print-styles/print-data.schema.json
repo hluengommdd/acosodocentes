@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "printData",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "establecimiento": {"type":"string"},
+    "docente": {"type":"string"},
+    "asignatura": {"type":"string"},
+    "estudiante": {"type":"string"},
+    "curso": {"type":"string"},
+    "edad": {"oneOf":[{"type":"string"},{"type":"integer"}]},
+    "sexo": {"type":"string"},
+    "fecha": {"type":"string","format":"date"},
+    "fecha_desde": {"type":"string","format":"date"},
+    "fecha_hasta": {"type":"string","format":"date"},
+    "total": {"oneOf":[{"type":"string"},{"type":"number"}]},
+    "interpretacion": {"type":"string"},
+    "contextos": {"type":"array","items":{"type":"string"}},
+    "impactos": {"type":"array","items":{"type":"string"}},
+    "firma_nombre": {"type":"string"},
+    "firma_fecha": {"type":"string","format":"date"},
+    "firma_rut": {"type":"string"},
+    "narrativo": {"type":"string"},
+    "items": {
+      "type":"array",
+      "items": {
+        "type":"object",
+        "additionalProperties": false,
+        "properties": {
+          "question": {"type":"string"},
+          "response": {"type":"string"},
+          "observation": {"type":"string"}
+        }
+      }
+    }
+  },
+  "required": ["items"]
+}

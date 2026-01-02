@@ -1,0 +1,19 @@
+{
+  "name": "obvq-print",
+  "version": "1.0.0",
+  "description": "Print template manifest for OBVQ-style print rendering",
+  "pageSize": "A4",
+  "margins": "10mm",
+  "cssVariables": [
+    "--print-font",
+    "--print-font-size",
+    "--print-accent",
+    "--print-bg",
+    "--print-margin",
+    "--qa-gap",
+    "--qa-columns"
+  ],
+  "sections": ["header","info-grid","qa-grid","narrative","signature"],
+  "rendererApi": ["renderPrint","?data","postMessage"],
+  "notes": "Other platforms may supply `printData` via sessionStorage, URL `?data=`, or postMessage. CSS overrides can be injected by providing a `theme` parameter (future)."
+}
