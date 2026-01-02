@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instrumento de Observación Individual - Acoso Escolar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container" role="form" aria-labelledby="main-title">
         <header class="site-header">
             <div class="header-left">
                 <img src="assets/logo-oficial.png" alt="Logo Institucional" class="logo">
             </div>
             <div class="header-center">
-                <h1>INSTRUMENTO DE OBSERVACIÓN INDIVIDUAL PARA DOCENTES</h1>
+                <h1 id="main-title">INSTRUMENTO DE OBSERVACIÓN INDIVIDUAL PARA DOCENTES</h1>
             </div>
             <div class="header-right">
                 <h2>Detección de Conductas de Acoso, Hostigamiento y Bullying</h2>
@@ -24,8 +27,8 @@
             <strong>Fundamento Teórico:</strong> Basado en Olweus OBVQ-R validado en Chile, Ley 20.536 de bullying, con propiedades psicométricas superiores a 0.85.
         </div>
 
-        <section id="datos-generales">
-            <h2>DATOS GENERALES</h2>
+        <section id="datos-generales" role="region" aria-labelledby="datos-generales-title">
+            <h2 id="datos-generales-title">DATOS GENERALES</h2>
             <div class="datos-generales">
                 <div class="campo">
                     <label for="establecimiento">Establecimiento:</label>
@@ -93,13 +96,13 @@
         </section>
 
         <!-- SECCIÓN A -->
-        <section id="seccion-a">
-            <h2>SECCIÓN A: CONDUCTAS DE AGRESIÓN DIRECTA</h2>
+        <section id="seccion-a" role="region" aria-labelledby="seccion-a-title">
+            <h2 id="seccion-a-title">SECCIÓN A: CONDUCTAS DE AGRESIÓN DIRECTA</h2>
             <div class="instrucciones">Escala: 0=No observado | 1=Raramente | 2=Ocasionalmente | 3=Frecuentemente</div>
             <table class="escala-tabla">
                 <thead>
                     <tr>
-                        <th>Conducta</th><th>0</th><th>1</th><th>2</th><th>3</th><th>Observaciones</th>
+                        <th scope="col">Conducta</th><th scope="col">0</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">Observaciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -109,7 +112,7 @@
                         <td><input type="radio" name="c1" value="1" /></td>
                         <td><input type="radio" name="c1" value="2" /></td>
                         <td><input type="radio" name="c1" value="3" /></td>
-                        <td><input type="text" /></td>
+                        <td><input type="text" aria-label="Observaciones pregunta 1" /></td>
                     </tr>
                     <tr>
                         <td>2. Burlas sobre apariencia u origen</td>
@@ -117,7 +120,7 @@
                         <td><input type="radio" name="c2" value="1" /></td>
                         <td><input type="radio" name="c2" value="2" /></td>
                         <td><input type="radio" name="c2" value="3" /></td>
-                        <td><input type="text" /></td>
+                        <td><input type="text" aria-label="Observaciones pregunta 2" /></td>
                     </tr>
                     <tr>
                         <td>3. Amenazas verbales o intimidación</td>
@@ -125,7 +128,7 @@
                         <td><input type="radio" name="c3" value="1" /></td>
                         <td><input type="radio" name="c3" value="2" /></td>
                         <td><input type="radio" name="c3" value="3" /></td>
-                        <td><input type="text" /></td>
+                        <td><input type="text" aria-label="Observaciones pregunta 3" /></td>
                     </tr>
                     <tr>
                         <td>4. Agresiones físicas (golpes, empujones)</td>
@@ -133,7 +136,7 @@
                         <td><input type="radio" name="c4" value="1" /></td>
                         <td><input type="radio" name="c4" value="2" /></td>
                         <td><input type="radio" name="c4" value="3" /></td>
-                        <td><input type="text" /></td>
+                        <td><input type="text" aria-label="Observaciones pregunta 4" /></td>
                     </tr>
                     <tr>
                         <td>5. Lanzamiento de objetos con intención de herir</td>
@@ -141,7 +144,7 @@
                         <td><input type="radio" name="c5" value="1" /></td>
                         <td><input type="radio" name="c5" value="2" /></td>
                         <td><input type="radio" name="c5" value="3" /></td>
-                        <td><input type="text" /></td>
+                        <td><input type="text" aria-label="Observaciones pregunta 5" /></td>
                     </tr>
                     <tr>
                         <td>6. Daño intencional a pertenencias ajenas</td>
@@ -149,19 +152,19 @@
                         <td><input type="radio" name="c6" value="1" /></td>
                         <td><input type="radio" name="c6" value="2" /></td>
                         <td><input type="radio" name="c6" value="3" /></td>
-                        <td><input type="text" /></td>
+                        <td><input type="text" aria-label="Observaciones pregunta 6" /></td>
                     </tr>
                 </tbody>
             </table>
         </section>
 
         <!-- SECCIÓN B -->
-        <section id="seccion-b">
-            <h2>SECCIÓN B: CONDUCTAS DE AGRESIÓN INDIRECTA/RELACIONAL</h2>
+        <section id="seccion-b" role="region" aria-labelledby="seccion-b-title">
+            <h2 id="seccion-b-title">SECCIÓN B: CONDUCTAS DE AGRESIÓN INDIRECTA/RELACIONAL</h2>
             <table class="escala-tabla">
                 <thead>
                     <tr>
-                        <th>Conducta</th><th>0</th><th>1</th><th>2</th><th>3</th><th>Observaciones</th>
+                        <th scope="col">Conducta</th><th scope="col">0</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">Observaciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -171,7 +174,7 @@
                         <td><input type="radio" name="c7" value="1" /></td>
                         <td><input type="radio" name="c7" value="2" /></td>
                         <td><input type="radio" name="c7" value="3" /></td>
-                        <td><input type="text" /></td>
+                        <td><input type="text" aria-label="Observaciones pregunta 7" /></td>
                     </tr>
                     <tr>
                         <td>8. Propagación de rumores y chismes</td>
@@ -179,7 +182,7 @@
                         <td><input type="radio" name="c8" value="1" /></td>
                         <td><input type="radio" name="c8" value="2" /></td>
                         <td><input type="radio" name="c8" value="3" /></td>
-                        <td><input type="text" /></td>
+                        <td><input type="text" aria-label="Observaciones pregunta 8" /></td>
                     </tr>
                     <tr>
                         <td>9. Manipulación de amistades</td>
@@ -187,7 +190,7 @@
                         <td><input type="radio" name="c9" value="1" /></td>
                         <td><input type="radio" name="c9" value="2" /></td>
                         <td><input type="radio" name="c9" value="3" /></td>
-                        <td><input type="text" /></td>
+                        <td><input type="text" aria-label="Observaciones pregunta 9" /></td>
                     </tr>
                     <tr>
                         <td>10. Expresiones de desprecio o menosprecio</td>
@@ -195,7 +198,7 @@
                         <td><input type="radio" name="c10" value="1" /></td>
                         <td><input type="radio" name="c10" value="2" /></td>
                         <td><input type="radio" name="c10" value="3" /></td>
-                        <td><input type="text" /></td>
+                        <td><input type="text" aria-label="Observaciones pregunta 10" /></td>
                     </tr>
                     <tr>
                         <td>11. Rechazo sistemático a relacionarse</td>
@@ -203,7 +206,7 @@
                         <td><input type="radio" name="c11" value="1" /></td>
                         <td><input type="radio" name="c11" value="2" /></td>
                         <td><input type="radio" name="c11" value="3" /></td>
-                        <td><input type="text" /></td>
+                        <td><input type="text" aria-label="Observaciones pregunta 11" /></td>
                     </tr>
                     <tr>
                         <td>12. Difusión de información vergonzosa</td>
@@ -211,19 +214,19 @@
                         <td><input type="radio" name="c12" value="1" /></td>
                         <td><input type="radio" name="c12" value="2" /></td>
                         <td><input type="radio" name="c12" value="3" /></td>
-                        <td><input type="text" /></td>
+                        <td><input type="text" aria-label="Observaciones pregunta 12" /></td>
                     </tr>
                 </tbody>
             </table>
         </section>
 
         <!-- SECCIÓN C -->
-        <section id="seccion-c">
-            <h2>SECCIÓN C: INDICADORES DE ASIMETRÍA DE PODER</h2>
+        <section id="seccion-c" role="region" aria-labelledby="seccion-c-title">
+            <h2 id="seccion-c-title">SECCIÓN C: INDICADORES DE ASIMETRÍA DE PODER</h2>
             <table class="escala-tabla">
                 <thead>
                     <tr>
-                        <th>Indicador</th><th>Sí</th><th>No</th><th>Contexto</th>
+                        <th scope="col">Indicador</th><th scope="col">Sí</th><th scope="col">No</th><th scope="col">Contexto</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -231,37 +234,37 @@
                         <td>13. ¿Ejerce conductas sobre compañeros más débiles?</td>
                         <td><input type="radio" name="c13" value="1" /></td>
                         <td><input type="radio" name="c13" value="0" /></td>
-                        <td><input type="text" /></td>
+                        <td><input type="text" aria-label="Observaciones pregunta 13" /></td>
                     </tr>
                     <tr>
                         <td>14. ¿Hay desproporción de poder?</td>
                         <td><input type="radio" name="c14" value="1" /></td>
                         <td><input type="radio" name="c14" value="0" /></td>
-                        <td><input type="text" /></td>
+                        <td><input type="text" aria-label="Observaciones pregunta 14" /></td>
                     </tr>
                     <tr>
                         <td>15. ¿Conductas repetidas e intencionales?</td>
                         <td><input type="radio" name="c15" value="1" /></td>
                         <td><input type="radio" name="c15" value="0" /></td>
-                        <td><input type="text" /></td>
+                        <td><input type="text" aria-label="Observaciones pregunta 15" /></td>
                     </tr>
                     <tr>
                         <td>16. ¿Actúa con otros compañeros?</td>
                         <td><input type="radio" name="c16" value="1" /></td>
                         <td><input type="radio" name="c16" value="0" /></td>
-                        <td><input type="text" /></td>
+                        <td><input type="text" aria-label="Observaciones pregunta 16" /></td>
                     </tr>
                     <tr>
                         <td>17. ¿Se burla de reacciones de víctimas?</td>
                         <td><input type="radio" name="c17" value="1" /></td>
                         <td><input type="radio" name="c17" value="0" /></td>
-                        <td><input type="text" /></td>
+                        <td><input type="text" aria-label="Observaciones pregunta 17" /></td>
                     </tr>
                     <tr>
                         <td>18. ¿Conductas continúan tras correcciones?</td>
                         <td><input type="radio" name="c18" value="1" /></td>
                         <td><input type="radio" name="c18" value="0" /></td>
-                        <td><input type="text" /></td>
+                        <td><input type="text" aria-label="Observaciones pregunta 18" /></td>
                     </tr>
                 </tbody>
             </table>
@@ -270,12 +273,12 @@
         <div class="page-break"></div>
 
         <!-- SECCIÓN D -->
-        <section id="seccion-d">
-            <h2>SECCIÓN D: PATRONES DE COMPORTAMIENTO</h2>
+        <section id="seccion-d" role="region" aria-labelledby="seccion-d-title">
+            <h2 id="seccion-d-title">SECCIÓN D: PATRONES DE COMPORTAMIENTO</h2>
             <table class="escala-tabla">
                 <thead>
                     <tr>
-                        <th>Patrón</th><th>Sí</th><th>No</th><th>Comentarios</th>
+                        <th scope="col">Patrón</th><th scope="col">Sí</th><th scope="col">No</th><th scope="col">Comentarios</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -283,45 +286,45 @@
                         <td>19. Busca situaciones sin supervisión de adultos</td>
                         <td><input type="radio" name="c19" value="1" /></td>
                         <td><input type="radio" name="c19" value="0" /></td>
-                        <td><input type="text" /></td>
+                        <td><input type="text" aria-label="Observaciones pregunta 19" /></td>
                     </tr>
                     <tr>
                         <td>20. Niega, minimiza o culpa a la víctima</td>
                         <td><input type="radio" name="c20" value="1" /></td>
                         <td><input type="radio" name="c20" value="0" /></td>
-                        <td><input type="text" /></td>
+                        <td><input type="text" aria-label="Observaciones pregunta 20" /></td>
                     </tr>
                     <tr>
                         <td>21. Falta de empatía o remordimiento</td>
                         <td><input type="radio" name="c21" value="1" /></td>
                         <td><input type="radio" name="c21" value="0" /></td>
-                        <td><input type="text" /></td>
+                        <td><input type="text" aria-label="Observaciones pregunta 21" /></td>
                     </tr>
                     <tr>
                         <td>22. Mantiene o incrementa conductas</td>
                         <td><input type="radio" name="c22" value="1" /></td>
                         <td><input type="radio" name="c22" value="0" /></td>
-                        <td><input type="text" /></td>
+                        <td><input type="text" aria-label="Observaciones pregunta 22" /></td>
                     </tr>
                     <tr>
                         <td>23. Cambios en víctimas (comportamiento/asistencia)</td>
                         <td><input type="radio" name="c23" value="1" /></td>
                         <td><input type="radio" name="c23" value="0" /></td>
-                        <td><input type="text" /></td>
+                        <td><input type="text" aria-label="Observaciones pregunta 23" /></td>
                     </tr>
                     <tr>
                         <td>24. Otros estudiantes temen o lo evitan</td>
                         <td><input type="radio" name="c24" value="1" /></td>
                         <td><input type="radio" name="c24" value="0" /></td>
-                        <td><input type="text" /></td>
+                        <td><input type="text" aria-label="Observaciones pregunta 24" /></td>
                     </tr>
                 </tbody>
             </table>
         </section>
 
         <!-- SECCIÓN E -->
-        <section id="seccion-e">
-            <h2>SECCIÓN E: CONTEXTOS DE OCURRENCIA</h2>
+        <section id="seccion-e" role="region" aria-labelledby="seccion-e-title">
+            <h2 id="seccion-e-title">SECCIÓN E: CONTEXTOS DE OCURRENCIA</h2>
             <div class="opciones">
                 <div class="opcion">
                     <input type="checkbox" name="contexto" id="ctx_sala" />
@@ -355,44 +358,44 @@
         </section>
 
         <!-- SECCIÓN F -->
-        <section id="seccion-f">
-            <h2>SECCIÓN F: IMPACTO OBSERVADO EN VÍCTIMAS</h2>
+        <section id="seccion-f" role="region" aria-labelledby="seccion-f-title">
+            <h2 id="seccion-f-title">SECCIÓN F: IMPACTO OBSERVADO EN VÍCTIMAS</h2>
             <table class="escala-tabla">
                 <thead>
                     <tr>
-                        <th>Impacto</th><th>Sí</th><th>No</th>
+                        <th scope="col">Impacto</th><th scope="col">Sí</th><th scope="col">No</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Ausentismo o faltas frecuentes</td>
                         <td><input type="checkbox" name="impacto" id="imp_ausentismo" /></td>
-                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" aria-label="No: ausentismo" /></td>
                     </tr>
                     <tr>
                         <td>Bajo rendimiento académico</td>
                         <td><input type="checkbox" name="impacto" id="imp_rendimiento" /></td>
-                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" aria-label="No: rendimiento" /></td>
                     </tr>
                     <tr>
                         <td>Aislamiento social</td>
                         <td><input type="checkbox" name="impacto" id="imp_aislamiento" /></td>
-                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" aria-label="No: aislamiento" /></td>
                     </tr>
                     <tr>
                         <td>Síntomas de ansiedad o tristeza</td>
                         <td><input type="checkbox" name="impacto" id="imp_ansiedad" /></td>
-                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" aria-label="No: ansiedad" /></td>
                     </tr>
                     <tr>
                         <td>Cambios en apetito o sueño</td>
                         <td><input type="checkbox" name="impacto" id="imp_apetito" /></td>
-                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" aria-label="No: apetito" /></td>
                     </tr>
                     <tr>
                         <td>Retraimiento de actividades</td>
                         <td><input type="checkbox" name="impacto" id="imp_retiro" /></td>
-                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" aria-label="No: retiro" /></td>
                     </tr>
                 </tbody>
             </table>
@@ -400,10 +403,10 @@
 
         <!-- REGISTRO NARRATIVO -->
         <section id="seccion-g">
-            <h2>SECCIÓN G: REGISTRO NARRATIVO</h2>
+            <h2 id="seccion-g-title" role="heading">SECCIÓN G: REGISTRO NARRATIVO</h2>
             <div class="instrucciones">Describa con detalle los episodios específicos presenciados. Incluya fechas, horas, lugar, descripciones exactas y nombres de otros compañeros.</div>
             <div class="campo">
-                <textarea id="narrativo" placeholder="Escriba los episodios específicos observados..."></textarea>
+                <textarea id="narrativo" placeholder="Escriba los episodios específicos observados..." aria-label="Registro narrativo"></textarea>
             </div>
         </section>
 
@@ -411,7 +414,7 @@
         <section id="puntuacion">
             <h2>PUNTUACIÓN Y RESULTADO</h2>
             <div class="total-box">
-                PUNTUACIÓN TOTAL: <span id="total">0</span> / 60
+                PUNTUACIÓN TOTAL: <span id="total" aria-live="polite">0</span> / 60
             </div>
             <div id="interpretacion" class="interpretacion" style="display: none;">
                 <strong id="resultado-texto"></strong>
@@ -433,11 +436,11 @@
 
         <!-- BOTONES -->
         <div class="action-buttons">
-            <button class="btn" onclick="abrirInforme()">
+            <button class="btn" onclick="abrirInforme()" aria-label="Imprimir o Guardar PDF">
                 <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M19 8h-1V3H6v5H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2zM8 5h8v3H8V5zM12 12a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/></svg>
                 Imprimir / Guardar PDF
             </button>
-            <button class="btn secondary" onclick="limpiarFormulario()">
+            <button class="btn secondary" onclick="limpiarFormulario()" aria-label="Limpiar formulario">
                 <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
                 Limpiar Formulario
             </button>
