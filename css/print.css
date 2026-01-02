@@ -1,0 +1,56 @@
+@page {
+    size: A4;
+    margin: 2.5cm;
+}
+
+body {
+    font-family: Calibri, Arial, sans-serif;
+    color: #000;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    width: 90px;
+    height: auto;
+}
+
+.header-text h1 {
+    margin: 0;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.header-text p {
+    margin: 2px 0;
+    font-size: 12px;
+}
+
+hr {
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: 14px;
+    margin-top: 25px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 5px;
+}
+
+p {
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.footer {
+    position: fixed;
+    bottom: 2cm;
+    left: 2.5cm;
+    right: 2.5cm;
+    text-align: center;
+    font-size: 11px;
+}

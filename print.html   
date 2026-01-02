@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Informe de Cierre de Caso</title>
+    <link rel="stylesheet" href="css/print.css">
+</head>
+<body>
+    <div class="informe">
+        <header>
+            <img src="assets/logo.png" alt="Logo Institucional" class="logo">
+            <h1>INFORME DE CIERRE DE CASO</h1>
+        </header>
+
+        <div class="datos">
+            <p><strong>Establecimiento:</strong> <span id="p_establecimiento"></span></p>
+            <p><strong>Estudiante:</strong> <span id="p_estudiante"></span></p>
+            <p><strong>Curso:</strong> <span id="p_curso"></span></p>
+            <p><strong>Fecha del Incidente:</strong> <span id="p_fecha"></span></p>
+        </div>
+
+        <section class="descripcion">
+            <h2>Descripción del Hecho</h2>
+            <p id="p_descripcion"></p>
+        </section>
+
+        <footer>
+            <p>Informe generado automáticamente por el Sistema de Convivencia Escolar</p>
+        </footer>
+    </div>
+
+    <script src="js/print.js"></script>
+    <script>
+        window.onload = () => window.print();
+    </script>
+</body>
+</html>

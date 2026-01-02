@@ -1,154 +1,459 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Instrumento de Observación - Acoso Escolar</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instrumento de Observación Individual - Acoso Escolar</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <main class="container">
-    <!-- Encabezado -->
-    <header>
-      <h1>INSTRUMENTO DE OBSERVACIÓN INDIVIDUAL PARA DOCENTES</h1>
-      <h2>Detección de Conductas de Acoso, Hostigamiento y Bullying</h2>
-    </header>
+    <div class="container">
+        <header>
+            <img src="assets/logo.png" alt="Logo Institucional" class="logo">
+            <h1>INSTRUMENTO DE OBSERVACIÓN INDIVIDUAL PARA DOCENTES</h1>
+            <h2>Detección de Conductas de Acoso, Hostigamiento y Bullying</h2>
+        </header>
 
-    <section class="fundamento">
-      <p><strong>Fundamento Teórico:</strong> Basado en Olweus OBVQ-R validado en Chile, Ley 20.536 de bullying, con propiedades psicométricas superiores a 0.85.</p>
-    </section>
-
-    <!-- DATOS GENERALES -->
-    <section class="seccion">
-      <h3>DATOS GENERALES</h3>
-      <div class="grid-2">
-        <div class="campo">
-          <label for="establecimiento">Establecimiento:</label>
-          <input type="text" id="establecimiento" placeholder="Nombre del colegio" />
+        <div class="titulo-fondamento">
+            <strong>Fundamento Teórico:</strong> Basado en Olweus OBVQ-R validado en Chile, Ley 20.536 de bullying, con propiedades psicométricas superiores a 0.85.
         </div>
-        <div class="campo">
-          <label for="fecha">Fecha de Aplicación:</label>
-          <input type="date" id="fecha" />
+
+        <section id="datos-generales">
+            <h2>DATOS GENERALES</h2>
+            <div class="datos-generales">
+                <div class="campo">
+                    <label for="establecimiento">Establecimiento:</label>
+                    <input type="text" id="establecimiento" placeholder="Nombre del colegio" />
+                </div>
+                <div class="campo">
+                    <label for="fecha">Fecha de Aplicación:</label>
+                    <input type="date" id="fecha" />
+                </div>
+            </div>
+
+            <div class="datos-generales">
+                <div class="campo">
+                    <label for="docente">Docente Observador:</label>
+                    <input type="text" id="docente" placeholder="Nombre completo" />
+                </div>
+                <div class="campo">
+                    <label for="asignatura">Asignatura/Área:</label>
+                    <input type="text" id="asignatura" placeholder="Ej: Matemática" />
+                </div>
+            </div>
+
+            <div class="datos-generales">
+                <div class="campo">
+                    <label for="estudiante">Nombre del Estudiante Observado:</label>
+                    <input type="text" id="estudiante" placeholder="Nombre completo" />
+                </div>
+                <div class="campo">
+                    <label for="curso">Curso:</label>
+                    <input type="text" id="curso" placeholder="Ej: 6° A" />
+                </div>
+            </div>
+
+            <div class="datos-generales">
+                <div class="campo">
+                    <label>Sexo:</label>
+                    <div class="opciones">
+                        <div class="opcion">
+                            <input type="radio" id="sexo_m" name="sexo" value="M" />
+                            <label for="sexo_m">Masculino</label>
+                        </div>
+                        <div class="opcion">
+                            <input type="radio" id="sexo_f" name="sexo" value="F" />
+                            <label for="sexo_f">Femenino</label>
+                        </div>
+                        <div class="opcion">
+                            <input type="radio" id="sexo_o" name="sexo" value="O" />
+                            <label for="sexo_o">Otro</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="campo">
+                    <label for="edad">Edad:</label>
+                    <input type="number" id="edad" placeholder="Años" min="3" max="20" />
+                </div>
+            </div>
+
+            <div class="campo">
+                <label>Período de Observación (Desde - Hasta):</label>
+                <div class="fechas">
+                    <input type="date" id="fecha_desde" />
+                    <input type="date" id="fecha_hasta" />
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN A -->
+        <section id="seccion-a">
+            <h2>SECCIÓN A: CONDUCTAS DE AGRESIÓN DIRECTA</h2>
+            <div class="instrucciones">Escala: 0=No observado | 1=Raramente | 2=Ocasionalmente | 3=Frecuentemente</div>
+            <table class="escala-tabla">
+                <thead>
+                    <tr>
+                        <th>Conducta</th><th>0</th><th>1</th><th>2</th><th>3</th><th>Observaciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1. Insultos y palabras hirientes</td>
+                        <td><input type="radio" name="c1" value="0" /></td>
+                        <td><input type="radio" name="c1" value="1" /></td>
+                        <td><input type="radio" name="c1" value="2" /></td>
+                        <td><input type="radio" name="c1" value="3" /></td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>2. Burlas sobre apariencia u origen</td>
+                        <td><input type="radio" name="c2" value="0" /></td>
+                        <td><input type="radio" name="c2" value="1" /></td>
+                        <td><input type="radio" name="c2" value="2" /></td>
+                        <td><input type="radio" name="c2" value="3" /></td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>3. Amenazas verbales o intimidación</td>
+                        <td><input type="radio" name="c3" value="0" /></td>
+                        <td><input type="radio" name="c3" value="1" /></td>
+                        <td><input type="radio" name="c3" value="2" /></td>
+                        <td><input type="radio" name="c3" value="3" /></td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>4. Agresiones físicas (golpes, empujones)</td>
+                        <td><input type="radio" name="c4" value="0" /></td>
+                        <td><input type="radio" name="c4" value="1" /></td>
+                        <td><input type="radio" name="c4" value="2" /></td>
+                        <td><input type="radio" name="c4" value="3" /></td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>5. Lanzamiento de objetos con intención de herir</td>
+                        <td><input type="radio" name="c5" value="0" /></td>
+                        <td><input type="radio" name="c5" value="1" /></td>
+                        <td><input type="radio" name="c5" value="2" /></td>
+                        <td><input type="radio" name="c5" value="3" /></td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>6. Daño intencional a pertenencias ajenas</td>
+                        <td><input type="radio" name="c6" value="0" /></td>
+                        <td><input type="radio" name="c6" value="1" /></td>
+                        <td><input type="radio" name="c6" value="2" /></td>
+                        <td><input type="radio" name="c6" value="3" /></td>
+                        <td><input type="text" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SECCIÓN B -->
+        <section id="seccion-b">
+            <h2>SECCIÓN B: CONDUCTAS DE AGRESIÓN INDIRECTA/RELACIONAL</h2>
+            <table class="escala-tabla">
+                <thead>
+                    <tr>
+                        <th>Conducta</th><th>0</th><th>1</th><th>2</th><th>3</th><th>Observaciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>7. Exclusión deliberada de actividades</td>
+                        <td><input type="radio" name="c7" value="0" /></td>
+                        <td><input type="radio" name="c7" value="1" /></td>
+                        <td><input type="radio" name="c7" value="2" /></td>
+                        <td><input type="radio" name="c7" value="3" /></td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>8. Propagación de rumores y chismes</td>
+                        <td><input type="radio" name="c8" value="0" /></td>
+                        <td><input type="radio" name="c8" value="1" /></td>
+                        <td><input type="radio" name="c8" value="2" /></td>
+                        <td><input type="radio" name="c8" value="3" /></td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>9. Manipulación de amistades</td>
+                        <td><input type="radio" name="c9" value="0" /></td>
+                        <td><input type="radio" name="c9" value="1" /></td>
+                        <td><input type="radio" name="c9" value="2" /></td>
+                        <td><input type="radio" name="c9" value="3" /></td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>10. Expresiones de desprecio o menosprecio</td>
+                        <td><input type="radio" name="c10" value="0" /></td>
+                        <td><input type="radio" name="c10" value="1" /></td>
+                        <td><input type="radio" name="c10" value="2" /></td>
+                        <td><input type="radio" name="c10" value="3" /></td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>11. Rechazo sistemático a relacionarse</td>
+                        <td><input type="radio" name="c11" value="0" /></td>
+                        <td><input type="radio" name="c11" value="1" /></td>
+                        <td><input type="radio" name="c11" value="2" /></td>
+                        <td><input type="radio" name="c11" value="3" /></td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>12. Difusión de información vergonzosa</td>
+                        <td><input type="radio" name="c12" value="0" /></td>
+                        <td><input type="radio" name="c12" value="1" /></td>
+                        <td><input type="radio" name="c12" value="2" /></td>
+                        <td><input type="radio" name="c12" value="3" /></td>
+                        <td><input type="text" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SECCIÓN C -->
+        <section id="seccion-c">
+            <h2>SECCIÓN C: INDICADORES DE ASIMETRÍA DE PODER</h2>
+            <table class="escala-tabla">
+                <thead>
+                    <tr>
+                        <th>Indicador</th><th>Sí</th><th>No</th><th>Contexto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>13. ¿Ejerce conductas sobre compañeros más débiles?</td>
+                        <td><input type="radio" name="c12" value="0" /></td>
+                        <td><input type="radio" name="c12" value="1" /></td>
+                        <td><input type="radio" name="c12" value="2" /></td>
+                        <td><input type="radio" name="c12" value="3" /></td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>14. ¿Hay desproporción de poder?</td>
+                        <td><input type="radio" name="c14" value="1" /></td>
+                        <td><input type="radio" name="c14" value="0" /></td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="c12" value="0" /></td>
+                        <td><input type="radio" name="c12" value="1" /></td>
+                        <td><input type="radio" name="c12" value="2" /></td>
+                        <td><input type="radio" name="c12" value="3" /></td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>16. ¿Actúa con otros compañeros?</td>
+                        <td><input type="radio" name="c12" value="0" /></td>
+                        <td><input type="radio" name="c12" value="1" /></td>
+                        <td><input type="radio" name="c12" value="2" /></td>
+                        <td><input type="radio" name="c12" value="3" /></td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>17. ¿Se burla de reacciones de víctimas?</td>
+                        <td><input type="radio" name="c12" value="0" /></td>
+                        <td><input type="radio" name="c12" value="1" /></td>
+                        <td><input type="radio" name="c12" value="2" /></td>
+                        <td><input type="radio" name="c12" value="3" /></td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>18. ¿Conductas continúan tras correcciones?</td>
+                        <td><input type="radio" name="c12" value="0" /></td>
+                        <td><input type="radio" name="c12" value="1" /></td>
+                        <td><input type="radio" name="c12" value="2" /></td>
+                        <td><input type="radio" name="c12" value="3" /></td>
+                        <td><input type="text" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- SECCIÓN D -->
+        <section id="seccion-d">
+            <h2>SECCIÓN D: PATRONES DE COMPORTAMIENTO</h2>
+            <table class="escala-tabla">
+                <thead>
+                    <tr>
+                        <th>Patrón</th><th>Sí</th><th>No</th><th>Comentarios</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>19. Busca situaciones sin supervisión de adultos</td>
+                        <td><input type="radio" name="c12" value="0" /></td>
+                        <td><input type="radio" name="c12" value="1" /></td>
+                        <td><input type="radio" name="c12" value="2" /></td>
+                        <td><input type="radio" name="c12" value="3" /></td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>20. Niega, minimiza o culpa a la víctima</td>
+                        <td><input type="radio" name="c12" value="0" /></td>
+                        <td><input type="radio" name="c12" value="1" /></td>
+                        <td><input type="radio" name="c12" value="2" /></td>
+                        <td><input type="radio" name="c12" value="3" /></td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>21. Falta de empatía o remordimiento</td>
+                        <td><input type="radio" name="c12" value="0" /></td>
+                        <td><input type="radio" name="c12" value="1" /></td>
+                        <td><input type="radio" name="c12" value="2" /></td>
+                        <td><input type="radio" name="c12" value="3" /></td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>22. Mantiene o incrementa conductas</td>
+                        <td><input type="radio" name="c12" value="0" /></td>
+                        <td><input type="radio" name="c12" value="1" /></td>
+                        <td><input type="radio" name="c12" value="2" /></td>
+                        <td><input type="radio" name="c12" value="3" /></td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>23. Cambios en víctimas (comportamiento/asistencia)</td>
+                        <td><input type="radio" name="c12" value="0" /></td>
+                        <td><input type="radio" name="c12" value="1" /></td>
+                        <td><input type="radio" name="c12" value="2" /></td>
+                        <td><input type="radio" name="c12" value="3" /></td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>24. Otros estudiantes temen o lo evitan</td>
+                        <td><input type="radio" name="c12" value="0" /></td>
+                        <td><input type="radio" name="c12" value="1" /></td>
+                        <td><input type="radio" name="c12" value="2" /></td>
+                        <td><input type="radio" name="c12" value="3" /></td>
+                        <td><input type="text" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SECCIÓN E -->
+        <section id="seccion-e">
+            <h2>SECCIÓN E: CONTEXTOS DE OCURRENCIA</h2>
+            <div class="opciones">
+                <div class="opcion">
+                    <input type="checkbox" name="contexto" id="ctx_sala" />
+                    <label for="ctx_sala">Sala de clases</label>
+                </div>
+                <div class="opcion">
+                    <input type="checkbox" name="contexto" id="ctx_recreo" />
+                    <label for="ctx_recreo">Recreos/espacios libres</label>
+                </div>
+                <div class="opcion">
+                    <input type="checkbox" name="contexto" id="ctx_banos" />
+                    <label for="ctx_banos">Baños</label>
+                </div>
+                <div class="opcion">
+                    <input type="checkbox" name="contexto" id="ctx_entrada" />
+                    <label for="ctx_entrada">Entrada/salida</label>
+                </div>
+                <div class="opcion">
+                    <input type="checkbox" name="contexto" id="ctx_comedor" />
+                    <label for="ctx_comedor">Comedor</label>
+                </div>
+                <div class="opcion">
+                    <input type="checkbox" name="contexto" id="ctx_redes" />
+                    <label for="ctx_redes">Redes sociales</label>
+                </div>
+                <div class="opcion">
+                    <input type="checkbox" name="contexto" id="ctx_camino" />
+                    <label for="ctx_camino">Camino al colegio</label>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN F -->
+        <section id="seccion-f">
+            <h2>SECCIÓN F: IMPACTO OBSERVADO EN VÍCTIMAS</h2>
+            <table class="escala-tabla">
+                <thead>
+                    <tr>
+                        <th>Impacto</th><th>Sí</th><th>No</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ausentismo o faltas frecuentes</td>
+                        <td><input type="checkbox" name="impacto" id="imp_ausentismo" /></td>
+                        <td><input type="checkbox" /></td>
+                    </tr>
+                    <tr>
+                        <td>Bajo rendimiento académico</td>
+                        <td><input type="checkbox" name="impacto" id="imp_rendimiento" /></td>
+                        <td><input type="checkbox" /></td>
+                    </tr>
+                    <tr>
+                        <td>Aislamiento social</td>
+                        <td><input type="checkbox" name="impacto" id="imp_aislamiento" /></td>
+                        <td><input type="checkbox" /></td>
+                    </tr>
+                    <tr>
+                        <td>Síntomas de ansiedad o tristeza</td>
+                        <td><input type="checkbox" name="impacto" id="imp_ansiedad" /></td>
+                        <td><input type="checkbox" /></td>
+                    </tr>
+                    <tr>
+                        <td>Cambios en apetito o sueño</td>
+                        <td><input type="checkbox" name="impacto" id="imp_apetito" /></td>
+                        <td><input type="checkbox" /></td>
+                    </tr>
+                    <tr>
+                        <td>Retraimiento de actividades</td>
+                        <td><input type="checkbox" name="impacto" id="imp_retiro" /></td>
+                        <td><input type="checkbox" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- REGISTRO NARRATIVO -->
+        <section id="seccion-g">
+            <h2>SECCIÓN G: REGISTRO NARRATIVO</h2>
+            <div class="instrucciones">Describa con detalle los episodios específicos presenciados. Incluya fechas, horas, lugar, descripciones exactas y nombres de otros compañeros.</div>
+            <div class="campo">
+                <textarea id="narrativo" placeholder="Escriba los episodios específicos observados..."></textarea>
+            </div>
+        </section>
+
+        <!-- PUNTUACIÓN TOTAL -->
+        <section id="puntuacion">
+            <h2>PUNTUACIÓN Y RESULTADO</h2>
+            <div class="total-box">
+                PUNTUACIÓN TOTAL: <span id="total">0</span> / 60
+            </div>
+            <div id="interpretacion" class="interpretacion" style="display: none;">
+                <strong id="resultado-texto"></strong>
+            </div>
+        </section>
+
+        <!-- FIRMA -->
+        <section id="firma">
+            <h2>FIRMA Y COMPROMISO</h2>
+            <p class="compromiso">
+                Por este medio confirmo que las observaciones se basan en hechos presenciados o reportados de manera confiable, con propósito de contribuir a la detección temprana y prevención del acoso escolar.
+            </p>
+            <div class="firma-section">
+                <p>Firma: <span class="firma-line"></span></p>
+                <p>Fecha: <span class="firma-line"></span></p>
+                <p>RUT: <span class="firma-line"></span></p>
+            </div>
+        </section>
+
+        <!-- BOTONES -->
+        <div class="action-buttons">
+            <button onclick="guardarDatos()">💾 Guardar Datos</button>
+            <button onclick="abrirInforme()">🖨️ Generar Informe PDF</button>
+            <button onclick="limpiarFormulario()">🔄 Limpiar Formulario</button>
         </div>
-      </div>
-
-      <div class="grid-2">
-        <div class="campo">
-          <label for="docente">Docente Observador:</label>
-          <input type="text" id="docente" placeholder="Nombre completo" />
-        </div>
-        <div class="campo">
-          <label for="asignatura">Asignatura/Área:</label>
-          <input type="text" id="asignatura" placeholder="Ej: Matemática" />
-        </div>
-      </div>
-
-      <div class="grid-2">
-        <div class="campo">
-          <label for="estudiante">Nombre del Estudiante Observado:</label>
-          <input type="text" id="estudiante" placeholder="Nombre completo" />
-        </div>
-        <div class="campo">
-          <label for="curso">Curso:</label>
-          <input type="text" id="curso" placeholder="Ej: 6° A" />
-        </div>
-      </div>
-
-      <div class="grid-2">
-        <fieldset class="campo">
-          <legend>Sexo:</legend>
-          <div class="opciones">
-            <label><input type="radio" name="sexo" value="M" /> Masculino</label>
-            <label><input type="radio" name="sexo" value="F" /> Femenino</label>
-            <label><input type="radio" name="sexo" value="O" /> Otro</label>
-          </div>
-        </fieldset>
-        <div class="campo">
-          <label for="edad">Edad:</label>
-          <input type="number" id="edad" min="3" max="20" placeholder="Años" />
-        </div>
-      </div>
-
-      <div class="campo">
-        <label>Período de Observación (Desde - Hasta):</label>
-        <div class="grid-2">
-          <input type="date" id="fecha_desde" />
-          <input type="date" id="fecha_hasta" />
-        </div>
-      </div>
-    </section>
-
-    <!-- SECCIÓN A -->
-    <section class="seccion-tabla">
-      <h3>SECCIÓN A: CONDUCTAS DE AGRESIÓN DIRECTA</h3>
-      <div class="escala-info">
-        Escala: 0=No observado | 1=Raramente | 2=Ocasionalmente | 3=Frecuentemente
-      </div>
-      <div class="tabla" id="tablaA"></div>
-    </section>
-
-    <!-- SECCIÓN B -->
-    <section class="seccion-tabla">
-      <h3>SECCIÓN B: CONDUCTAS DE AGRESIÓN INDIRECTA/RELACIONAL</h3>
-      <div class="tabla" id="tablaB"></div>
-    </section>
-
-    <!-- SECCIÓN C -->
-    <section class="seccion-tabla">
-      <h3>SECCIÓN C: INDICADORES DE ASIMETRÍA DE PODER</h3>
-      <div class="tabla" id="tablaC"></div>
-    </section>
-
-    <!-- SECCIÓN D -->
-    <section class="seccion-tabla">
-      <h3>SECCIÓN D: PATRONES DE COMPORTAMIENTO</h3>
-      <div class="tabla" id="tablaD"></div>
-    </section>
-
-    <!-- SECCIÓN E -->
-    <section class="seccion-tabla">
-      <h3>SECCIÓN E: CONTEXTOS DE OCURRENCIA</h3>
-      <div class="checkbox-list" id="listaContextos"></div>
-    </section>
-
-    <!-- SECCIÓN F -->
-    <section class="seccion-tabla">
-      <h3>SECCIÓN F: IMPACTO OBSERVADO EN VÍCTIMAS</h3>
-      <div class="tabla" id="tablaF"></div>
-    </section>
-
-    <!-- SECCIÓN G -->
-    <section class="seccion">
-      <h3>SECCIÓN G: REGISTRO NARRATIVO</h3>
-      <p class="instruccion">Describa con detalle los episodios específicos presenciados. Incluya fechas, horas, lugar, descripciones exactas y nombres de otros compañeros.</p>
-      <textarea id="narrativo" placeholder="Escriba los episodios específicos observados..."></textarea>
-    </section>
-
-    <!-- RESULTADO -->
-    <section class="resultado" id="resultado">
-      <h3>PUNTUACIÓN Y RESULTADO</h3>
-      <div class="puntaje">
-        PUNTUACIÓN TOTAL: <span id="total">0</span> / 60
-      </div>
-      <div id="interpretacion" class="interpretacion" style="display: none;"></div>
-    </section>
-
-    <!-- FIRMA -->
-    <section class="seccion">
-      <h3>FIRMA Y COMPROMISO</h3>
-      <p>Por este medio confirmo que las observaciones se basan en hechos presenciados o reportados de manera confiable, con propósito de contribuir a la detección temprana y prevención del acoso escolar.</p>
-      <div class="firma-linea">Firma: <span class="linea"></span></div>
-      <div class="firma-linea">Fecha: <span class="linea"></span></div>
-      <div class="firma-linea">RUT: <span class="linea"></span></div>
-    </section>
-
-    <!-- BOTONES -->
-    <div class="acciones">
-      <button id="btn-imprimir">🖨️ Imprimir / Guardar como PDF</button>
-      <button id="btn-limpiar">🔄 Limpiar Formulario</button>
     </div>
-  </main>
 
-  <script src="script.js"></script>
+    <script src="js/form.js"></script>
 </body>
 </html>
