@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Plantilla de impresión — Template</title>
+    <link rel="icon" type="image/png" href="/assets/logo-oficial.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/print-styles/css/print-variables.css" />
+    <link rel="stylesheet" href="/print-styles/css/print.css" />
+    <style>#printControls{position:fixed;right:18px;top:18px;z-index:9999;display:flex;gap:8px}#printControls button{padding:8px 10px;border-radius:4px;border:1px solid #ccc;background:#fff;cursor:pointer}@media print{#printControls{display:none!important}}</style>
+  </head>
+  <body>
+    <div id="printContent" class="print-document print-shell">
+      <p>Cargando plantilla...</p>
+    </div>
+
+    <!--
+      Uso: colocar en sessionStorage/localStorage la clave `printData` con el objeto
+      o llamar `renderPrint(myData)` desde la consola o un script que cargue esta plantilla.
+      Esto permite a otra plataforma reutilizar estilos/estructura y solo cambiar `data`.
+    -->
+
+    <script src="/print-styles/js/html2pdf.bundle.min.js"></script>
+    <script src="/print-styles/js/print-renderer.js"></script>
+    <script>
+      // render on load using stored printData or fallback to empty
+      window.addEventListener('DOMContentLoaded', ()=>{
+        if(window.renderPrint) window.renderPrint();
+      });
+    </script>
+  </body>
+</html>
