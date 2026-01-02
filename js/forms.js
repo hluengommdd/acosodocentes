@@ -69,6 +69,43 @@ function guardarDatos() {
     };
 
     const sexoElem = document.querySelector('input[name="sexo"]:checked');
+    // Build per-question items (question text, response, observation)
+    const items = [];
+    for (let i = 1; i <= 24; i++) {
+        const radios = Array.from(document.getElementsByName('c' + i));
+        let questionText = '';
+        let response = '';
+        let observation = '';
+
+        if (radios.length) {
+            // find a radio to get the row text
+            const sample = radios[0];
+            const tr = sample.closest && sample.closest('tr');
+            if (tr) {
+                const firstTd = tr.querySelector('td');
+                if (firstTd) questionText = firstTd.textContent.trim();
+                const obsInput = tr.querySelector('input[type="text"]');
+                if (obsInput) observation = obsInput.value || '';
+            }
+
+            const checked = radios.find(r => r.checked);
+            if (checked) {
+                // if binary (two radios) -> Sí/No
+                if (radios.length === 2) {
+                    response = checked.value === '1' ? 'Sí' : 'No';
+                } else {
+                    // map numeric scale
+                    const v = checked.value;
+                    const map = { '0': 'No observado', '1': 'Raramente', '2': 'Ocasionalmente', '3': 'Frecuentemente' };
+                    response = map[v] || v;
+                }
+            } else {
+                response = '';
+            }
+        }
+        if (questionText || response || observation) items.push({ question: questionText, response, observation });
+    }
+
     const data = {
         establecimiento: document.getElementById('establecimiento')?document.getElementById('establecimiento').value:'',
         estudiante: document.getElementById('estudiante')?document.getElementById('estudiante').value:'',
@@ -85,6 +122,7 @@ function guardarDatos() {
         interpretacion: document.getElementById('resultado-texto')?document.getElementById('resultado-texto').textContent:'',
         contextos: getCheckedValues('contexto'),
         impactos: getCheckedValues('impacto')
+        ,items: items
     };
 
     // Save to sessionStorage so print view can read it immediately after opening

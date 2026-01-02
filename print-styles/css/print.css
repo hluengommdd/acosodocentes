@@ -11,6 +11,16 @@ body.print-shell{padding:8mm}
 .text-response{white-space:pre-wrap;background:#fff;padding:8px;border:1px solid #e6eef8;border-radius:4px}
 .print-footer{margin-top:18px;font-size:11px;color:#6b7280;border-top:1px dashed #e6eef8;padding-top:8px}
 
+/* QA two-column grid */
+.qa-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:8px}
+.qa-item{background:#fff;border:1px solid #eef6ff;padding:8px;border-radius:6px;font-size:13px}
+.qa-item .q{font-weight:600;margin-bottom:6px}
+.qa-item .r,.qa-item .obs{font-size:13px;margin-bottom:4px}
+
+@media (max-width:720px){
+  .qa-grid{grid-template-columns:1fr}
+}
+
 /* Mobile friendly */
 @media (max-width:720px){
   .info-grid{grid-template-columns:1fr}

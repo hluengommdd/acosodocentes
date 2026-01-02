@@ -43,6 +43,16 @@
           <div><strong>Impactos observados:</strong> ${impactosStr}</div>
         </div>
       </div>
+
+      <div class="section">
+        <h3>Detalles por ítem</h3>
+        <div class="qa-grid">
+          ${Array.isArray(data.items) && data.items.length ? data.items.map(item=>{
+            return `<div class="qa-item"><div class="q">${item.question||''}</div><div class="r"><strong>Respuesta:</strong> ${valorDefault(item.response,'No especificado')}</div><div class="obs"><strong>Observación:</strong> ${valorDefault(item.observation,'')}</div></div>`
+          }).join('') : '<div>No hay ítems registrados.</div>'}
+        </div>
+      </div>
+
       <div class="section">
         <h3>Registro narrativo</h3>
         <div class="text-response">${valorDefault(data.narrativo,'')}</div>
