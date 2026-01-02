@@ -10,13 +10,14 @@
 body{font-family:Inter, system-ui, -apple-system, 'Helvetica Neue', Arial;line-height:1.45;background:var(--bg);color:#111;margin:0;padding:24px}
 .container{max-width:var(--maxw);margin:0 auto;background:transparent}
 header{display:flex;align-items:center;gap:18px;padding:18px 0}
-.site-header{display:grid;grid-template-columns:96px 1fr auto;align-items:center;gap:18px;padding:18px 0}
+.site-header{display:grid;grid-template-columns:64px 1fr 64px;align-items:center;gap:18px;padding:18px 0}
 .header-left{display:flex;align-items:center}
-.logo{width:72px;height:auto;border-radius:8px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+.logo{width:64px;height:auto;border-radius:8px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
 .header-center{text-align:center}
-.header-center h1{font-size:20px;margin:0;color:#0f172a}
+.header-center h1{font-size:20px;margin:0;color:#0f172a;font-weight:700}
+.header-center h2{font-size:15px;margin:6px 0 0;color:#0b2540;font-weight:700}
+.header-sub{font-size:12px;color:var(--muted);margin-top:6px}
 .header-right{text-align:right}
-.header-right h2{font-size:14px;margin:0;color:var(--muted);font-weight:500;padding-bottom:6px;border-bottom:3px solid rgba(43,108,176,0.22);min-width:200px}
 .titulo-fondamento{background:linear-gradient(90deg, rgba(43,108,176,0.06), rgba(43,108,176,0.02));padding:10px;border-radius:8px;color:#0f172a;margin-bottom:18px}
 section{background:var(--card);padding:18px;border-radius:10px;margin-bottom:16px;box-shadow:0 6px 18px rgba(15,23,42,0.04)}
 section h2{font-size:16px;margin:0 0 12px}
