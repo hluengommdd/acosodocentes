@@ -424,15 +424,24 @@
         </section>
 
         <!-- FIRMA -->
-        <section id="firma">
-            <h2>FIRMA Y COMPROMISO</h2>
+        <section id="firma" role="region" aria-labelledby="firma-title">
+            <h2 id="firma-title">FIRMA Y COMPROMISO</h2>
             <p class="compromiso">
                 Por este medio confirmo que las observaciones se basan en hechos presenciados o reportados de manera confiable, con propósito de contribuir a la detección temprana y prevención del acoso escolar.
             </p>
             <div class="firma-section">
-                <p>Firma: <span class="firma-line"></span></p>
-                <p>Fecha: <span class="firma-line"></span></p>
-                <p>RUT: <span class="firma-line"></span></p>
+                <div class="campo">
+                    <label for="firma_nombre">Firma (nombre):</label>
+                    <input type="text" id="firma_nombre" placeholder="Nombre y firma" aria-label="Nombre de la persona que firma" />
+                </div>
+                <div class="campo">
+                    <label for="firma_fecha">Fecha:</label>
+                    <input type="date" id="firma_fecha" aria-label="Fecha de firma" />
+                </div>
+                <div class="campo">
+                    <label for="firma_rut">RUT:</label>
+                    <input type="text" id="firma_rut" placeholder="RUT" aria-label="RUT de la persona" />
+                </div>
             </div>
         </section>
 

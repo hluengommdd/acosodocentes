@@ -11,6 +11,11 @@ body.print-shell{padding:8mm}
 .text-response{white-space:pre-wrap;background:#fff;padding:8px;border:1px solid #e6eef8;border-radius:4px}
 .print-footer{margin-top:18px;font-size:11px;color:#6b7280;border-top:1px dashed #e6eef8;padding-top:8px}
 
+/* Firma styles for print */
+.firma-block{margin-top:12px;display:flex;gap:18px;align-items:flex-start}
+.firma-field{min-width:180px;font-size:13px}
+.firma-line{display:block;border-bottom:1px solid rgba(0,0,0,0.6);height:18px;width:100%;margin-top:8px}
+
 /* QA two-column grid */
 .qa-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:8px}
 .qa-item{background:#fff;border:1px solid #eef6ff;padding:8px;border-radius:6px;font-size:13px}

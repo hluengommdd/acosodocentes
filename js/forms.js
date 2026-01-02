@@ -122,7 +122,11 @@ function guardarDatos() {
         interpretacion: document.getElementById('resultado-texto')?document.getElementById('resultado-texto').textContent:'',
         contextos: getCheckedValues('contexto'),
         impactos: getCheckedValues('impacto')
-        ,items: items
+        ,
+        firma_nombre: (document.getElementById('firma_nombre') && document.getElementById('firma_nombre').value) || "",
+        firma_fecha: (document.getElementById('firma_fecha') && document.getElementById('firma_fecha').value) || "",
+        firma_rut: (document.getElementById('firma_rut') && document.getElementById('firma_rut').value) || "",
+        items: items
     };
 
     // Save to sessionStorage so print view can read it immediately after opening

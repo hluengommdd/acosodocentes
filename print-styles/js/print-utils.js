@@ -41,6 +41,9 @@
           <div><strong>Interpretación:</strong> ${valorDefault(data.interpretacion)}</div>
           <div><strong>Contextos:</strong> ${contextosStr}</div>
           <div><strong>Impactos observados:</strong> ${impactosStr}</div>
+          <div><strong>Firma:</strong> ${valorDefault(data.firma_nombre)}</div>
+          <div><strong>Fecha firma:</strong> ${valorDefault(data.firma_fecha)}</div>
+          <div><strong>RUT firma:</strong> ${valorDefault(data.firma_rut)}</div>
         </div>
       </div>
 
