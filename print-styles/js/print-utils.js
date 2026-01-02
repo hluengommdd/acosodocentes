@@ -18,12 +18,16 @@
 
   const html = `
     <header class="print-header">
-      <div>
-        <div class="print-page-title">CUESTIONARIO - INSTRUMENTO DE OBSERVACIÓN</div>
-        <div class="print-page-subtitle">${valorDefault(data.establecimiento,'')}</div>
+      <div class="header-left">
+        <img src="${logo}" class="print-header__logo" alt="logo"/>
+      </div>
+      <div class="header-center">
+        <div class="print-page-title">INSTRUMENTO DE OBSERVACIÓN</div>
+        <div class="print-page-subtitle">INDIVIDUAL PARA DOCENTES</div>
+        <div class="print-page-subsub">${valorDefault(data.establecimiento,'')}</div>
         <div class="print-page-date">Fecha emisión: ${fechaEmision} ${horaEmision}</div>
       </div>
-      <div class="header-right"><img src="${logo}" class="print-header__logo" alt="logo"/></div>
+      <div class="header-right"></div>
     </header>
     <div class="print-body">
       <div class="info-section">
