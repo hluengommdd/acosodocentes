@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instrumento de Observación - Acoso Escolar</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <!-- Encabezado -->
+    <header>
+      <h1>INSTRUMENTO DE OBSERVACIÓN INDIVIDUAL PARA DOCENTES</h1>
+      <h2>Detección de Conductas de Acoso, Hostigamiento y Bullying</h2>
+    </header>
+
+    <section class="fundamento">
+      <p><strong>Fundamento Teórico:</strong> Basado en Olweus OBVQ-R validado en Chile, Ley 20.536 de bullying, con propiedades psicométricas superiores a 0.85.</p>
+    </section>
+
+    <!-- DATOS GENERALES -->
+    <section class="seccion">
+      <h3>DATOS GENERALES</h3>
+      <div class="grid-2">
+        <div class="campo">
+          <label for="establecimiento">Establecimiento:</label>
+          <input type="text" id="establecimiento" placeholder="Nombre del colegio" />
+        </div>
+        <div class="campo">
+          <label for="fecha">Fecha de Aplicación:</label>
+          <input type="date" id="fecha" />
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="campo">
+          <label for="docente">Docente Observador:</label>
+          <input type="text" id="docente" placeholder="Nombre completo" />
+        </div>
+        <div class="campo">
+          <label for="asignatura">Asignatura/Área:</label>
+          <input type="text" id="asignatura" placeholder="Ej: Matemática" />
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="campo">
+          <label for="estudiante">Nombre del Estudiante Observado:</label>
+          <input type="text" id="estudiante" placeholder="Nombre completo" />
+        </div>
+        <div class="campo">
+          <label for="curso">Curso:</label>
+          <input type="text" id="curso" placeholder="Ej: 6° A" />
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <fieldset class="campo">
+          <legend>Sexo:</legend>
+          <div class="opciones">
+            <label><input type="radio" name="sexo" value="M" /> Masculino</label>
+            <label><input type="radio" name="sexo" value="F" /> Femenino</label>
+            <label><input type="radio" name="sexo" value="O" /> Otro</label>
+          </div>
+        </fieldset>
+        <div class="campo">
+          <label for="edad">Edad:</label>
+          <input type="number" id="edad" min="3" max="20" placeholder="Años" />
+        </div>
+      </div>
+
+      <div class="campo">
+        <label>Período de Observación (Desde - Hasta):</label>
+        <div class="grid-2">
+          <input type="date" id="fecha_desde" />
+          <input type="date" id="fecha_hasta" />
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN A -->
+    <section class="seccion-tabla">
+      <h3>SECCIÓN A: CONDUCTAS DE AGRESIÓN DIRECTA</h3>
+      <div class="escala-info">
+        Escala: 0=No observado | 1=Raramente | 2=Ocasionalmente | 3=Frecuentemente
+      </div>
+      <div class="tabla" id="tablaA"></div>
+    </section>
+
+    <!-- SECCIÓN B -->
+    <section class="seccion-tabla">
+      <h3>SECCIÓN B: CONDUCTAS DE AGRESIÓN INDIRECTA/RELACIONAL</h3>
+      <div class="tabla" id="tablaB"></div>
+    </section>
+
+    <!-- SECCIÓN C -->
+    <section class="seccion-tabla">
+      <h3>SECCIÓN C: INDICADORES DE ASIMETRÍA DE PODER</h3>
+      <div class="tabla" id="tablaC"></div>
+    </section>
+
+    <!-- SECCIÓN D -->
+    <section class="seccion-tabla">
+      <h3>SECCIÓN D: PATRONES DE COMPORTAMIENTO</h3>
+      <div class="tabla" id="tablaD"></div>
+    </section>
+
+    <!-- SECCIÓN E -->
+    <section class="seccion-tabla">
+      <h3>SECCIÓN E: CONTEXTOS DE OCURRENCIA</h3>
+      <div class="checkbox-list" id="listaContextos"></div>
+    </section>
+
+    <!-- SECCIÓN F -->
+    <section class="seccion-tabla">
+      <h3>SECCIÓN F: IMPACTO OBSERVADO EN VÍCTIMAS</h3>
+      <div class="tabla" id="tablaF"></div>
+    </section>
+
+    <!-- SECCIÓN G -->
+    <section class="seccion">
+      <h3>SECCIÓN G: REGISTRO NARRATIVO</h3>
+      <p class="instruccion">Describa con detalle los episodios específicos presenciados. Incluya fechas, horas, lugar, descripciones exactas y nombres de otros compañeros.</p>
+      <textarea id="narrativo" placeholder="Escriba los episodios específicos observados..."></textarea>
+    </section>
+
+    <!-- RESULTADO -->
+    <section class="resultado" id="resultado">
+      <h3>PUNTUACIÓN Y RESULTADO</h3>
+      <div class="puntaje">
+        PUNTUACIÓN TOTAL: <span id="total">0</span> / 60
+      </div>
+      <div id="interpretacion" class="interpretacion" style="display: none;"></div>
+    </section>
+
+    <!-- FIRMA -->
+    <section class="seccion">
+      <h3>FIRMA Y COMPROMISO</h3>
+      <p>Por este medio confirmo que las observaciones se basan en hechos presenciados o reportados de manera confiable, con propósito de contribuir a la detección temprana y prevención del acoso escolar.</p>
+      <div class="firma-linea">Firma: <span class="linea"></span></div>
+      <div class="firma-linea">Fecha: <span class="linea"></span></div>
+      <div class="firma-linea">RUT: <span class="linea"></span></div>
+    </section>
+
+    <!-- BOTONES -->
+    <div class="acciones">
+      <button id="btn-imprimir">🖨️ Imprimir / Guardar como PDF</button>
+      <button id="btn-limpiar">🔄 Limpiar Formulario</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
