@@ -141,15 +141,21 @@ function abrirInforme() {
 
 function limpiarFormulario() {
     if (confirm('¿Desea limpiar todo el formulario?')) {
-        document.querySelectorAll('input, textarea').forEach(elem => {
-            if (elem.type === 'radio' || elem.type === 'checkbox') {
-                elem.checked = false;
-            } else {
-                elem.value = '';
-            }
-        });
+        const form = document.getElementById('mainForm');
+        if (form) {
+            form.reset();
+        } else {
+            document.querySelectorAll('input, textarea').forEach(elem => {
+                if (elem.type === 'radio' || elem.type === 'checkbox') {
+                    elem.checked = false;
+                } else {
+                    elem.value = '';
+                }
+            });
+        }
         document.getElementById('total').textContent = '0';
-        document.getElementById('interpretacion').style.display = 'none';
+        const interp = document.getElementById('interpretacion');
+        if (interp) interp.style.display = 'none';
     }
 }
 
@@ -162,4 +168,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Inicializar con 0
     document.getElementById('total').textContent = '0';
+    // handle form submit (submit -> guardarDatos -> abrir informe)
+    const mainForm = document.getElementById('mainForm');
+    if (mainForm) {
+        mainForm.addEventListener('submit', function(e){
+            e.preventDefault();
+            abrirInforme();
+        });
+    }
 });

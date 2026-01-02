@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="container" role="form" aria-labelledby="main-title">
+    <form id="mainForm" class="container" novalidate aria-labelledby="main-title">
         <header class="site-header">
             <div class="header-left">
                 <img src="assets/logo-oficial.png" alt="Logo Institucional" class="logo">
@@ -98,8 +98,8 @@
         <!-- SECCIÓN A -->
         <section id="seccion-a" role="region" aria-labelledby="seccion-a-title">
             <h2 id="seccion-a-title">SECCIÓN A: CONDUCTAS DE AGRESIÓN DIRECTA</h2>
-            <div class="instrucciones">Escala: 0=No observado | 1=Raramente | 2=Ocasionalmente | 3=Frecuentemente</div>
-            <table class="escala-tabla">
+            <div id="seccion-a-instr" class="instrucciones">Escala: 0=No observado | 1=Raramente | 2=Ocasionalmente | 3=Frecuentemente</div>
+            <table class="escala-tabla" aria-describedby="seccion-a-instr">
                 <thead>
                     <tr>
                         <th scope="col">Conducta</th><th scope="col">0</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">Observaciones</th>
@@ -161,7 +161,8 @@
         <!-- SECCIÓN B -->
         <section id="seccion-b" role="region" aria-labelledby="seccion-b-title">
             <h2 id="seccion-b-title">SECCIÓN B: CONDUCTAS DE AGRESIÓN INDIRECTA/RELACIONAL</h2>
-            <table class="escala-tabla">
+            <div id="seccion-b-instr" class="instrucciones">Escala: 0=No observado | 1=Raramente | 2=Ocasionalmente | 3=Frecuentemente</div>
+            <table class="escala-tabla" aria-describedby="seccion-b-instr">
                 <thead>
                     <tr>
                         <th scope="col">Conducta</th><th scope="col">0</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">Observaciones</th>
@@ -223,7 +224,8 @@
         <!-- SECCIÓN C -->
         <section id="seccion-c" role="region" aria-labelledby="seccion-c-title">
             <h2 id="seccion-c-title">SECCIÓN C: INDICADORES DE ASIMETRÍA DE PODER</h2>
-            <table class="escala-tabla">
+            <div id="seccion-c-instr" class="instrucciones">Marcar si aplica (Sí/No) y anotar contexto o comentarios relevantes.</div>
+            <table class="escala-tabla" aria-describedby="seccion-c-instr">
                 <thead>
                     <tr>
                         <th scope="col">Indicador</th><th scope="col">Sí</th><th scope="col">No</th><th scope="col">Contexto</th>
@@ -402,11 +404,11 @@
         </section>
 
         <!-- REGISTRO NARRATIVO -->
-        <section id="seccion-g">
+        <section id="seccion-g" role="region" aria-labelledby="seccion-g-title">
             <h2 id="seccion-g-title" role="heading">SECCIÓN G: REGISTRO NARRATIVO</h2>
-            <div class="instrucciones">Describa con detalle los episodios específicos presenciados. Incluya fechas, horas, lugar, descripciones exactas y nombres de otros compañeros.</div>
+            <div id="seccion-g-instr" class="instrucciones">Describa con detalle los episodios específicos presenciados. Incluya fechas, horas, lugar, descripciones exactas y nombres de otros compañeros.</div>
             <div class="campo">
-                <textarea id="narrativo" placeholder="Escriba los episodios específicos observados..." aria-label="Registro narrativo"></textarea>
+                <textarea id="narrativo" placeholder="Escriba los episodios específicos observados..." aria-label="Registro narrativo" aria-describedby="seccion-g-instr"></textarea>
             </div>
         </section>
 
@@ -436,16 +438,16 @@
 
         <!-- BOTONES -->
         <div class="action-buttons">
-            <button class="btn" onclick="abrirInforme()" aria-label="Imprimir o Guardar PDF">
+            <button type="submit" class="btn" aria-label="Imprimir o Guardar PDF">
                 <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M19 8h-1V3H6v5H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2zM8 5h8v3H8V5zM12 12a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/></svg>
                 Imprimir / Guardar PDF
             </button>
-            <button class="btn secondary" onclick="limpiarFormulario()" aria-label="Limpiar formulario">
+            <button type="button" class="btn secondary" onclick="limpiarFormulario()" aria-label="Limpiar formulario">
                 <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
                 Limpiar Formulario
             </button>
         </div>
-    </div>
+    </form>
 
     <script src="js/forms.js"></script>
     <script src="js/print.js"></script>
